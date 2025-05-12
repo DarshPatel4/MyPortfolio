@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.hex-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-opacity='0.05' fill='%234ADE80'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+.glass-card {
+  background: rgba(107, 70, 193, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(74, 222, 128, 0.1);
+  box-shadow: 0 8px 32px rgba(74, 222, 128, 0.1);
+}
+
+.skill-badge {
+  @apply px-4 py-2 rounded-lg text-sm font-medium bg-purple-900/50 border border-primary-green/20
+         hover:border-primary-green/40 transition-all duration-300 transform hover:-translate-y-1;
+}
+
+.nav-link {
+  @apply relative px-4 py-2 text-gray-300 hover:text-white transition-colors duration-300;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary-green transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.project-card {
+  @apply relative overflow-hidden rounded-2xl transition-all duration-500;
+  background: linear-gradient(135deg, rgba(107, 70, 193, 0.1), rgba(74, 222, 128, 0.1));
+}
+
+.project-card::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-br from-primary-purple/20 to-primary-green/20 opacity-0 transition-opacity duration-300;
+}
+
+.project-card:hover::before {
+  @apply opacity-100;
+}
+
+.timeline-dot {
+  @apply absolute left-0 w-4 h-4 rounded-full bg-primary-green transform -translate-x-1/2;
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+}
+
+.section-heading {
+  @apply relative text-4xl md:text-5xl font-bold mb-16 inline-block;
+}
+
+.section-heading::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-1/2 h-1 bg-gradient-to-r from-primary-purple to-primary-green;
+}
