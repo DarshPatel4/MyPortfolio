@@ -44,8 +44,7 @@ function App() {
 
   const certificates = [
     { title: 'Database Management System', image: '/iit-kgp-dbms.jpg' },
-    { title: 'DSA in Java', image: '/iit-kgp-dsa.jpg' },
-    { title: 'Red Hat', image: '/red-hat-cert.jpg' },
+    { title: 'DSA in Java', image: '/iit-kgp-dsa.jpg' }
   ];
 
   return (
@@ -133,7 +132,7 @@ function App() {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden border border-primary-green/20">
                 <img 
-                  src="public/D4.jpg"
+                  src="/D4.jpg"
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
@@ -299,11 +298,10 @@ function App() {
                   alt={certificate.title}
                   className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-purple-950 via-purple-950/50 to-transparent"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h3 className="text-lg font-bold text-black bg-white/70 px-4 py-2 rounded-md">
-                    {certificate.title}
-                  </h3>
+                  <div className="w-full h-1/3 bg-gradient-to-r from-green-400 via-purple-900 to-green-400 flex items-center justify-center">
+                    <h3 className="text-lg font-bold text-white">{certificate.title}</h3>
+                  </div>
                 </div>
               </div>
             ))}
